@@ -1,14 +1,14 @@
 export const Especialidades = [
   {
-    id: 1,
+    id: 0,
     nombre: "Cardiología",
   },
   {
-    id: 2,
+    id: 1,
     nombre: "Pediatría",
   },
   {
-    id: 3,
+    id: 2,
     nombre: "Dermatología",
   },
 ];

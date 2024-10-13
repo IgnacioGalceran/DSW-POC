@@ -5,14 +5,13 @@ import { Link } from "expo-router";
 import { styles } from "../styles/medicos";
 import { Medico } from "../types/Medico";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { deleteField } from "../functions/functions";
+import { deleteMedico } from "../functions/functions";
 
 export default function Index() {
   const [medicos, setMedicos] = useState<any>(Medicos);
 
   const handleDelete = (id: number) => {
-    let medicosUpdated = deleteField(medicos, id);
-    console.log(medicosUpdated);
+    let medicosUpdated = deleteMedico(medicos, id);
     setMedicos(medicosUpdated);
   };
 
@@ -23,8 +22,8 @@ export default function Index() {
         <Text style={styles.subtitle}>Lista de médicos</Text>
         <View style={styles.grid}>
           {medicos.length ? (
-            medicos.map((medico) => (
-              <View key={medico.id} style={styles.medicoCard}>
+            medicos.map((medico, index) => (
+              <View key={index} style={styles.medicoCard}>
                 <Text style={styles.medicoName}>
                   {medico.nombre} {medico.apellido}
                 </Text>

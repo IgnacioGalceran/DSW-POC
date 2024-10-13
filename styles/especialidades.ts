@@ -88,4 +88,10 @@ export const styles = StyleSheet.create({
   trash: {
     cursor: "pointer",
   },
+  actions: {
+    flex: 1,
+    flexDirection: "row",
+    gap: 1,
+    marginTop: 5,
+  },
 });
